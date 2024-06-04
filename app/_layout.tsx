@@ -1,37 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
+import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
+  useFonts({
+    'outfit': require('../assets/fonts/Outfit-Regular.ttf'),
+    'outfit-bold': require('../assets/fonts/Outfit-Bold.ttf'),
+    'outfit-black': require('../assets/fonts/Outfit-Black.ttf'),
+    'outfit-medium': require('../assets/fonts/Outfit-Medium.ttf'),
+    'outfit-light': require('../assets/fonts/Outfit-Light.ttf'),
+    'outfit-thin': require('../assets/fonts/Outfit-Thin.ttf'),
+    'outfit-extra-light': require('../assets/fonts/Outfit-ExtraLight.ttf'),
+    'outfit-extra-bold': require('../assets/fonts/Outfit-ExtraBold.ttf'),
+    'outfit-semi-bold': require('../assets/fonts/Outfit-SemiBold.ttf'),
+    'outfit-regular': require('../assets/fonts/Outfit-Regular.ttf'),
+  })
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name="(tabs)"
+      options = {{
+          headerShown: false
+
+      }}
+      />
+    </Stack>
   );
 }

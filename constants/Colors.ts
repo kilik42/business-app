@@ -5,6 +5,14 @@
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
+const primaryColor = '#7F57F1';
+const secondaryColor = '#FFC107';
+const tertiaryColor = '#FF6B81';
+const quaternaryColor = '#4CD964';
+const quinaryColor = '#5AC8FA';
+const senaryColor = '#5856D6';
+const septenaryColor = '#FF9500';
+const octonaryColor = '#FF2D55';
 
 export const Colors = {
   light: {
@@ -23,4 +31,5 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
+  PRIMARY: '#7F57F1',
 };
