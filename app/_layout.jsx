@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
-import { ClerkProvider } from "@clerk/clerk-expo";
+import { SafeAreaView, Text, StyleSheet } from "react-native";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import LoginScreen from "./../components/LoginScreen";
 export default function RootLayout() {
   useFonts({
